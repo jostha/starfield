@@ -1,8 +1,6 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
-#include <math.h>
-#include <stdio.h>
-#include <time.h>
+//#include <stdio.h>
 
 const int SCREEN_WIDTH  = 1024;
 const int SCREEN_HEIGHT = 768;
@@ -35,7 +33,7 @@ int main() {
 	al_register_event_source(evqueue, al_get_display_event_source(display));
 
 	// Initialise RNG
-   srand((unsigned) time(&t));
+	srand((unsigned) time(&t));
 
 	// Create a random starfield
 	star stars[FIELDSIZE]; 
@@ -66,7 +64,7 @@ int main() {
 			if (stars[i].x == 0) {
 				stars[i].x = SCREEN_WIDTH;
 			}
-			}
+		}
 		
 		al_flip_display();
 		al_clear_to_color(al_map_rgb(0, 0, 0));
